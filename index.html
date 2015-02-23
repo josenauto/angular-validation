@@ -5,7 +5,7 @@
   </head>
   <body>
     <h2>Validation Example</h2>
-    <form ng-app="" ng-controller="validateCtrl" name="myForm" novalidate>
+    <form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate>
       <p>Username:<br>
         <!--La directiva ng-model une los elementos de entrada al modelo-->
         <input type="text" name="user" ng-model="user" required>
@@ -24,12 +24,9 @@
         <input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid">
       </p>
     </form>
-    <script>
-    //El model objeto tiene dos propiedades: user y email.
-    function validateCtrl($scope) {
-      $scope.user = "John Doe";
-      $scope.email = "john.doe@gmail.com";
-    }
-    </script>
+    <!--MODULES-->
+    <script src="myApp.js"></script>
+    <!--CONTROLLERS-->
+    <script src="validateCtrl.js"></script>
   </body>
 </html>
